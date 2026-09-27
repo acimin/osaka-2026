@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>여행 준비물</title>
+<style>
+  :root {
+    --bg: #faf7f2; --card: #ffffff; --text: #2b2724; --muted: #7a716a;
+    --line: #e8e1d8; --accent: #b5532c; --tag: #f3ebe1;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1a18; --card: #26231f; --text: #ece6df; --muted: #a39a91;
+      --line: #3a352f; --accent: #e08a5f; --tag: #332e28;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: -apple-system, "Apple SD Gothic Neo", "Pretendard", "Malgun Gothic", sans-serif;
+    line-height: 1.6; font-size: 16px;
+  }
+  main { max-width: 640px; margin: 0 auto; padding: 32px 16px 64px; }
+  header h1 { margin: 0 0 4px; font-size: 26px; letter-spacing: -0.02em; }
+  header p { margin: 0; color: var(--muted); font-size: 14px; }
+  a { color: var(--accent); text-decoration: none; font-size: 13px; }
+  a:hover { text-decoration: underline; }
+  .back { display: inline-block; margin-bottom: 12px; }
+  .progress {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    margin: 16px 0 28px;
+  }
+  .progress .count { font-size: 14px; color: var(--muted); }
+  .progress .count strong { color: var(--accent); }
+  .reset {
+    padding: 6px 14px; border: 1px solid var(--line); border-radius: 999px;
+    background: var(--card); color: var(--accent); font: inherit; font-size: 13px; font-weight: 600;
+    cursor: pointer;
+  }
+  .reset:hover { background: var(--tag); }
+  section.day {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 18px 18px 8px; margin-bottom: 16px;
+  }
+  .day h2 { margin: 0 0 8px; font-size: 18px; }
+  ul { list-style: none; padding: 0; margin: 0; }
+  li { padding: 10px 0; border-top: 1px solid var(--line); }
+  li:first-child { border-top: none; }
+  li label { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; }
+  li input { width: 18px; height: 18px; margin: 3px 0 0; flex: none; accent-color: var(--accent); }
+  .what { display: block; font-weight: 600; }
+  .note { display: block; font-size: 14px; color: var(--muted); }
+  li input:checked + span { opacity: 0.5; }
+  li input:checked + span .what { text-decoration: line-through; }
+  footer { margin-top: 32px; font-size: 12px; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <a class="back" href="index.html">← 일정으로</a>
+    <h1>여행 준비물</h1>
+    <p>체크 상태는 이 브라우저에 저장돼요</p>
+  </header>
+
+  <div class="progress">
+    <span class="count"><strong id="done">0</strong> / <span id="total">0</span> 완료</span>
+    <button type="button" class="reset" id="reset">모두 해제</button>
+  </div>
+
+  <section class="day">
+    <h2>📄 서류 · 돈</h2>
+    <ul>
+      <li><label><input type="checkbox" data-id="passport"><span><span class="what">여권</span><span class="note">유효기간 확인</span></span></label></li>
+      <li><label><input type="checkbox" data-id="passport-copy"><span><span class="what">여권 사본 · 사진</span><span class="note">분실 대비, 휴대폰에도 저장</span></span></label></li>
+      <li><label><input type="checkbox" data-id="eticket"><span><span class="what">전자항공권 캡처</span></span></label></li>
+      <li><label><input type="checkbox" data-id="insurance"><span><span class="what">여행자보험</span></span></label></li>
+      <li><label><input type="checkbox" data-id="cards"><span><span class="what">해외결제 카드 2장</span><span class="note">한 장이 안 될 때를 대비</span></span></label></li>
+      <li><label><input type="checkbox" data-id="yen"><span><span class="what">엔화 현금</span><span class="note">작은 가게·시장은 현금만 받는 곳이 있음</span></span></label></li>
+      <li><label><input type="checkbox" data-id="ic-card"><span><span class="what">교통카드</span><span class="note">ICOCA 또는 휴대폰 교통카드</span></span></label></li>
+    </ul>
+  </section>
+
+  <section class="day">
+    <h2>🔌 전자기기</h2>
+    <ul>
+      <li><label><input type="checkbox" data-id="charger"><span><span class="what">휴대폰 충전기 · 케이블</span></span></label></li>
+      <li><label><input type="checkbox" data-id="powerbank"><span><span class="what">보조배터리</span><span class="note">위탁 수하물 불가, 기내 반입</span></span></label></li>
+      <li><label><input type="checkbox" data-id="adapter"><span><span class="what">돼지코 (A타입 변환 어댑터)</span><span class="note">일본은 11자 콘센트라 한국 플러그가 안 맞음</span></span></label></li>
+      <li><label><input type="checkbox" data-id="data"><span><span class="what">이심 · 유심 · 로밍</span></span></label></li>
+      <li><label><input type="checkbox" data-id="earphones"><span><span class="what">이어폰</span></span></label></li>
+    </ul>
+  </section>
+
+  <section class="day">
+    <h2>👕 옷</h2>
+    <ul>
+      <li><label><input type="checkbox" data-id="tops"><span><span class="what">상의</span></span></label></li>
+      <li><label><input type="checkbox" data-id="bottoms"><span><span class="what">하의</span></span></label></li>
+      <li><label><input type="checkbox" data-id="underwear"><span><span class="what">속옷 · 양말</span></span></label></li>
+      <li><label><input type="checkbox" data-id="pajamas"><span><span class="what">잠옷</span></span></label></li>
+      <li><label><input type="checkbox" data-id="outer"><span><span class="what">겉옷</span></span></label></li>
+      <li><label><input type="checkbox" data-id="shoes"><span><span class="what">편한 신발</span><span class="note">하루 종일 걷는 일정</span></span></label></li>
+    </ul>
+  </section>
+
+  <section class="day">
+    <h2>🧴 세면 · 위생</h2>
+    <ul>
+      <li><label><input type="checkbox" data-id="toothbrush"><span><span class="what">칫솔 · 치약</span></span></label></li>
+      <li><label><input type="checkbox" data-id="skincare"><span><span class="what">스킨케어</span></span></label></li>
+      <li><label><input type="checkbox" data-id="sunscreen"><span><span class="what">선크림</span></span></label></li>
+      <li><label><input type="checkbox" data-id="lens"><span><span class="what">렌즈 · 안경</span></span></label></li>
+      <li><label><input type="checkbox" data-id="handkerchief"><span><span class="what">손수건</span><span class="note">핸드드라이어·휴지가 없는 화장실이 있음</span></span></label></li>
+    </ul>
+  </section>
+
+  <section class="day">
+    <h2>💊 상비약</h2>
+    <ul>
+      <li><label><input type="checkbox" data-id="digestive"><span><span class="what">소화제</span></span></label></li>
+      <li><label><input type="checkbox" data-id="painkiller"><span><span class="what">진통제</span></span></label></li>
+      <li><label><input type="checkbox" data-id="bandage"><span><span class="what">밴드</span></span></label></li>
+      <li><label><input type="checkbox" data-id="meds"><span><span class="what">개인 복용약</span></span></label></li>
+    </ul>
+  </section>
+
+  <section class="day">
+    <h2>🎒 기타</h2>
+    <ul>
+      <li><label><input type="checkbox" data-id="ecobag"><span><span class="what">에코백</span><span class="note">일본 가게 비닐봉투는 유료</span></span></label></li>
+      <li><label><input type="checkbox" data-id="coin-purse"><span><span class="what">동전지갑</span><span class="note">현금 쓰면 동전이 빨리 쌓임</span></span></label></li>
+      <li><label><input type="checkbox" data-id="umbrella"><span><span class="what">우산</span></span></label></li>
+      <li><label><input type="checkbox" data-id="pen"><span><span class="what">볼펜</span><span class="note">입국 서류 작성용</span></span></label></li>
+    </ul>
+  </section>
+
+  <footer>체크 상태는 기기·브라우저마다 따로 저장됨</footer>
+</main>
+<script>
+  var KEY = 'osaka-checklist';
+  var boxes = document.querySelectorAll('input[data-id]');
+
+  function load() {
+    try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) { return []; }
+  }
+  function save() {
+    var ids = [];
+    boxes.forEach(function (b) { if (b.checked) ids.push(b.dataset.id); });
+    try { localStorage.setItem(KEY, JSON.stringify(ids)); } catch (e) {}
+    document.getElementById('done').textContent = ids.length;
+  }
+
+  var saved = load();
+  boxes.forEach(function (b) {
+    b.checked = saved.indexOf(b.dataset.id) !== -1;
+    b.addEventListener('change', save);
+  });
+  document.getElementById('total').textContent = boxes.length;
+  save();
+
+  document.getElementById('reset').addEventListener('click', function () {
+    if (!confirm('체크를 모두 해제할까요?')) return;
+    boxes.forEach(function (b) { b.checked = false; });
+    save();
+  });
+</script>
+</body>
+</html>
