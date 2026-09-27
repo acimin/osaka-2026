@@ -45,6 +45,16 @@
   .note { font-size: 14px; color: var(--muted); }
   a { color: var(--accent); text-decoration: none; font-size: 13px; }
   a:hover { text-decoration: underline; }
+  .day-nav { display: flex; gap: 6px; margin: 16px 0 0; }
+  .day-nav a {
+    flex: 1; min-width: 0; text-align: center; white-space: nowrap;
+    padding: 6px 0; border: 1px solid var(--line); border-radius: 999px;
+    background: var(--card); color: var(--accent); font-size: 13px; font-weight: 600;
+  }
+  .day-nav a:hover { background: var(--tag); text-decoration: none; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  section.day { scroll-margin-top: 12px; }
   footer { margin-top: 32px; font-size: 12px; color: var(--muted); text-align: center; }
 </style>
 </head>
@@ -53,6 +63,13 @@
   <header>
     <h1>오사카 로컬 산책</h1>
     <p>관광지보다 동네 · 킷사텐 · 빵 · 시장 · 이자카야</p>
+    <nav class="day-nav" aria-label="날짜 바로가기">
+      <a href="#day1">DAY 1</a>
+      <a href="#day2">DAY 2</a>
+      <a href="#day3">DAY 3</a>
+      <a href="#day4">DAY 4</a>
+      <a href="#day5">DAY 5</a>
+    </nav>
   </header>
 
   <div class="legend">
@@ -63,7 +80,7 @@
     <span class="tag">🚶 산책</span>
   </div>
 
-  <section class="day">
+  <section class="day" id="day1">
     <h2><span>DAY 1</span>도착, 난바 뒷골목</h2>
     <p class="theme">오후 도착 → 짐 풀고 가볍게</p>
     <ul>
@@ -76,7 +93,7 @@
     </ul>
   </section>
 
-  <section class="day">
+  <section class="day" id="day2">
     <h2><span>DAY 2</span>나카자키초 · 텐마</h2>
     <p class="theme">오래된 골목 카페 → 긴 상점가 → 서서 마시는 술집</p>
     <ul>
@@ -101,7 +118,7 @@
     </ul>
   </section>
 
-  <section class="day">
+  <section class="day" id="day3">
     <h2><span>DAY 3</span>시장 아침 · 기타하마 강변</h2>
     <p class="theme">이른 시장 → 강가 산책 → 빵</p>
     <ul>
@@ -125,7 +142,7 @@
     </ul>
   </section>
 
-  <section class="day">
+  <section class="day" id="day4">
     <h2><span>DAY 4</span>가라호리 · 후쿠시마</h2>
     <p class="theme">옛 골목 상점가 → 오사카식 술집 동네</p>
     <ul>
@@ -144,7 +161,7 @@
     </ul>
   </section>
 
-  <section class="day">
+  <section class="day" id="day5">
     <h2><span>DAY 5</span>귀국</h2>
     <p class="theme">오전 출발 — 공항으로</p>
     <ul>
